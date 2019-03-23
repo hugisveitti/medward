@@ -1,0 +1,92 @@
+
+
+.hidden{
+  display: none;
+
+}
+
+.container{
+  margin-top: 100px;
+  text-align: center;
+  margin-bottom:100px;
+  /* display:none; */
+
+  animation-name: example;
+  animation-duration: 4s;
+}
+
+
+#new-medication-results{
+  /* outline: 1px solid black; */
+  padding: 20px;
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.danger{
+  /* outline: 4px solid red; */
+  background-color: #e04a4a;
+  color:white;
+}
+
+.no-danger{
+  /* outline: 4px solid green; */
+  background-color: #91db30;
+}
+
+.some-danger{
+  /* outline: 4px solid yellow; */
+  background-color: #eae73a;
+}
+
+h4{
+  padding:0;
+  margin:0;
+  text-align: center;
+  padding-top:10px;
+}
+
+h6{
+  padding:0;
+  margin:0;
+  text-align: center;
+  padding-bottom: 15px;
+}
+
+#new-medication-info{
+  margin-top:50px;
+  margin-bottom:50px;
+}
+
+#add-to-my-medication{
+
+}
+
+
+
+.alert-div{
+  padding:10px;
+  margin-bottom:20px;
+}
+
+
+.moderate-danger{
+  background-color: orange;
+  color:white;
+}
+
+.major-danger{
+  background-color: red;
+  color:white;
+}
+
+.minor-danger{
+  background-color: yellow;
+  color:white;
+
+}
+
+@keyframes example {
+  from {display: none;}
+  to {display: block;}
+}

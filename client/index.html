@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Compiled and minified CSS -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <title>mEdward</title>
+</head>
+<body>
+  <nav class="nav-extended blue lighten-2">
+    <div class="nav-wrapper">
+      <h4>mEdward</h4>
+      <h6>I have the time your doctor doesn't</h6>
+    </div>
+    <div class="nav-content hidden" id="nav-bar">
+      <ul class="tabs tabs-transparent">
+        <li class="tab"><a  id="about-me-tab"><i class="left material-icons">person</i>About Me</a></li>
+        <li class="tab"><a class="active" id="new-medication-tab"><i class="left material-icons">add_circle_outline</i>New Medication</a></li>
+        <li class="tab"><a id="my-medication-tab"><i class=" left material-icons">local_hospital</i>My Medication</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div id="login-container" class="container">
+    <input placeholder="Kennitala" id="kennitala" type="text" value="2207399999">
+    <a class="waves-effect waves-light btn" id="login-btn">Login</a>
+  </div>
+
+  <div class="container hidden" id="about-me">
+    <div class="row">
+      <div class="col s12 m6">
+        <div class="card blue-grey lighten-1">
+          <div class="card-content white-text">
+            <span class="card-title">Name: Jón Jónsson</span>
+            <p>Kt. <span id="kt"></span></p>
+            <p>Date Of Birth <span id="date-of-birth"></span></p>
+            <p>Insurance number 9129128309120938123</p>
+            <p>Please call +354 5812345 in case of an emergancy</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="medical-info">
+
+    </div>
+  </div>
+  <div class="container hidden" id="new-medication">
+    <h4>Interaction Checker</h4>
+    <h6 id="new-medication-info">
+      Can I take this drug with my current medication and conditions?
+    </h6>
+    <div class="row">
+   <div class="col s12">
+     <div class="row">
+       <div class="input-field col s10">
+         <i class="material-icons prefix">search</i>
+         <input placeholder="Medication Name" id="medication-name" type="text" class="autocomplete validate">
+
+         <!-- <label for="first_name">Medication name</label> -->
+       </div>
+       <!-- <div class="input-field col s4">
+         <a class="waves-effect waves-light btn" id="medicine-search-button"><i class="material-icons left">search</i>Search</a>
+
+        </div> -->
+     </div>
+    </div>
+  </div>
+  <div id="new-medication-results" class="hidden"></div>
+  <!-- <a id="add-to-my-medication" class="hidden center"><i class="material-icons">plus</i>Add To My Medication</a> -->
+  <a class="waves-effect waves-light btn hidden" id="add-to-my-medication"><i class="material-icons left">add</i>Add To My Medication</a>
+
+  </div>
+
+  <div class="container hidden" id="my-medication">
+
+    <div id="my-medication-alerts">
+    </div>
+    <div id="my-medication-list"></div>
+
+  </div>
+
+
+</body>
+<script src="tabs.js"></script>
+<script src="aboutMe.js"></script>
+<script>
+
+</script>
+<script src="newMedication.js"></script>
+<script src="myMedication.js"></script>
+</html>
