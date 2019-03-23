@@ -29,14 +29,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
       var obj = checkMedication(med);
 
-      console.log(obj)
+
       var newMedicationResults = document.getElementById("new-medication-results");
+      newMedicationResults.innerHTML = "";
+      newMedicationResults.classList.add("card");
+
       if(obj["count"] === 0){
         newMedicationResults.classList.add("no-danger");
         newMedicationResults.classList.remove("danger");
 
         newMedicationResults.classList.remove("hidden");
-        newMedicationResults.innerHTML = "It's okay to take this medication."
+        newMedicationResults.innerHTML = "It's okay to take this medication"
       } else {
         newMedicationResults.classList.add("danger");
         newMedicationResults.classList.remove("no-danger");
@@ -46,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
         addNewMedicationResult(obj["majorAlerts"],"medication");
         addNewMedicationResult(obj["moderateAlerts"], "medication");
         addNewMedicationResult(obj["minorAlerts"], "medication");
-        newMedicationResults.innerHTML += "You are advised to speak to your physician before taking this drug."
+        newMedicationResults.innerHTML += "You are advised to speak to your physician before taking this drug"
       }
 
 
@@ -60,7 +63,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 function checkMedication(med){
-  console.log(med)
   count = 0; //count deseases.
   var contraAlerts = []
   var myDiagnoses = aboutMe["diagnosisData"];
@@ -70,7 +72,6 @@ function checkMedication(med){
       for(var j=0;j< myDiagnoses.length; j++){
         if(contra[i]["icD10Code"].substring(0,3) === myDiagnoses[j]["icD10Code"].substring(0,3)){
 
-          console.log(myDiagnoses[j])
           contraAlerts.push(myDiagnoses[j]["term"]);
           count++;
         }
@@ -80,7 +81,6 @@ function checkMedication(med){
 
   var majorAlerts = [];
   var major = med["major"];
-  console.log(medicationData)
   if(major){
     for(var i=0; i<major.length; i++){
       for(var j=0; j<medicationData.length; j++){
@@ -117,11 +117,6 @@ function checkMedication(med){
       }
     }
   }
-
-  console.log("contraAlerts" + contraAlerts);
-  console.log("majorAlerts" + majorAlerts);
-  console.log("moderateAlerts" + moderateAlerts);
-  console.log("minorAlerts" + minorAlerts);
   var obj = {"contraAlerts": contraAlerts, "majorAlerts" : majorAlerts,"moderateAlerts" : moderateAlerts,"minorAlerts": minorAlerts, "count":count}
 
   return obj;
@@ -153,9 +148,13 @@ addToMyMedicationBtn.addEventListener("click", () => {
 
 
 var medication = [{"atcCode": "M01AE01","name":"Ibufen", "strength":500,"strengthUnit":"mg"},
-{"atcCode":"", name:"Immodium"}];
+{"atcCode":"", name:"Immodium"},
+{"atcCode":"", name:"Paracetamol"}
+];
 
 
 // var medicationInteractions = [{"atcCode":"M01AE01", "name":"Ibuprofen","major":[{"atcCode":"B01AC06", "name":"Aspirin"}],"moderate":[{"name":"Metoprolol","atcCode":"C07AB02"}],"minor":[]}]
 var medicationInteractions = [{"atcCode":"M01AE01", name:"Ibufen", "contraIndicationsICD":[{"icD10Code": "I10"},{ "icD10Code": "J45"},{"icD10Code":"N18"}], "major":[{"atcCode":"B01AC06"}],"moderate":[{"atcCode":"C07AB02"}],"minor":[]},
-    {"atcCode":"", name:"Immodium", "contraIndicationsICD":[{"icD10Code": "", "icD10Code": ""}], "major":[{"atcCode":""}],"moderate":[{"atcCode":""}],"minor":[]}]
+    {"atcCode":"", name:"Immodium", "contraIndicationsICD":[{"icD10Code": "", "icD10Code": ""}], "major":[{"atcCode":""}],"moderate":[{"atcCode":""}],"minor":[]},
+    {"atcCode":"", name:"Paracetamol", "contraIndicationsICD":[], "major":[],"moderate":[],"minor":[]}
+  ]
