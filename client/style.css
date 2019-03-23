@@ -9,17 +9,14 @@
   margin-top: 100px;
   text-align: center;
   margin-bottom:100px;
-  /* display:none; */
 
-  animation-name: example;
-  animation-duration: 4s;
 }
 
 
 #new-medication-results{
   /* outline: 1px solid black; */
   padding: 20px;
-  font-size: 32px;
+  font-size: 16px;
   margin-bottom: 30px;
 }
 
@@ -84,6 +81,11 @@ h6{
   background-color: yellow;
   color:white;
 
+}
+
+.card{
+  width:500px;
+  margin: auto;
 }
 
 @keyframes example {
