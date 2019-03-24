@@ -148,14 +148,21 @@ addToMyMedicationBtn.addEventListener("click", () => {
 });
 
 
+//dummy data for the drugs available
+
 var medication = [{"atcCode": "M01AE01","name":"Ibufen", "strength":500,"strengthUnit":"mg"},
 {"atcCode":"", name:"Immodium"},
-{"atcCode":"", name:"Paracetamol"}
+{"atcCode":"", name:"Paracetamol"},
+{"atcCode" :"B01AC06", name:"Aspirin"}
 ];
 
 
+
+//dummy data for the drug interactions.
+
 // var medicationInteractions = [{"atcCode":"M01AE01", "name":"Ibuprofen","major":[{"atcCode":"B01AC06", "name":"Aspirin"}],"moderate":[{"name":"Metoprolol","atcCode":"C07AB02"}],"minor":[]}]
-var medicationInteractions = [{"atcCode":"M01AE01", name:"Ibufen", "contraIndicationsICD":[{"icD10Code": "I10"},{ "icD10Code": "J45"},{"icD10Code":"N18"}], "major":[{"atcCode":"B01AC06"}],"moderate":[{"atcCode":"C07AB02"},{"atcCode":"C09CA00"}],"minor":[]},
+var medicationInteractions = [{"atcCode":"M01AE01", name:"Ibufen", "contraIndicationsICD":[{"icD10Code": "I10"},{ "icD10Code": "J45"},{"icD10Code":"N18"}], "major":[{"atcCode":"B01AC06"}],"moderate":[{"atcCode":"C07AB02"},{"atcCode":"C09CA00"},{"atcCode":"C09CA03"}],"minor":[]},
     {"atcCode":"", name:"Immodium", "contraIndicationsICD":[{"icD10Code": "", "icD10Code": ""}], "major":[{"atcCode":""}],"moderate":[{"atcCode":""}],"minor":[]},
-    {"atcCode":"", name:"Paracetamol", "contraIndicationsICD":[], "major":[],"moderate":[],"minor":[]}
+    {"atcCode":"", name:"Paracetamol", "contraIndicationsICD":[], "major":[],"moderate":[],"minor":[]},
+    {"atcCode":"B01AC06", name:"Aspirin", "contraIndicationsICD":[], "major":[],"moderate":[{"atcCode":"C09CA00"},{"atcCode":"C09CA03"}],"minor":[{"atcCode":"C07AB02"}]}
   ]
