@@ -1,6 +1,14 @@
 // var ssn = 1507699999;
   var ssn = 2207399999;
 
+  var kennitolur = ["0206929999",
+    "1202119999",
+    "1507699999",
+    "1605899999",
+    "2207399999",
+    "2307869999",
+    "2803899999"];
+
   var loginBtn = document.getElementById("login-btn");
   loginBtn.addEventListener("click", () => {
     var kennitala = document.getElementById("kennitala");

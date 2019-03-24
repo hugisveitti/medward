@@ -32,7 +32,6 @@ function crossCheck(){
   for(var i=0; i<medicationData.length; i++){
     var obj = {}
     obj = checkMedication(medicationData[i]);
-    console.log(obj);
     if(obj["count"] > count){
       count = obj["count"];
     }
@@ -48,12 +47,19 @@ function crossCheck(){
     }
     console.log(count)
     if(count === 0){
-      var div = document.createElement("div");
-      div.classList.add("no-danger");
-      div.classList.add("alert-div");
-      // div.classList.add("card");
-      div.innerHTML = "No interaction or contraindications detected"
-      myMedicationAlerts.appendChild(div);
+
+      window.setTimeout(() => {
+        var div = document.createElement("div");
+        div.classList.add("no-danger");
+        div.classList.add("alert-div");
+        // div.style.height = "0";
+
+
+        div.innerHTML = "No interaction or contraindications detected"
+        myMedicationAlerts.appendChild(div);
+        // myMedicationAlerts.style.height = "100%";
+      }, 1000);
+
     }
 }
 
@@ -70,6 +76,9 @@ function addAlert(name, alert, type, cate){
     } else {
       div.innerHTML += ". Contact your doctor."
     }
-    myMedicationAlerts.appendChild(div);
+    window.setTimeout(() => {
+      myMedicationAlerts.appendChild(div);
+    }, 1000);
+
   }
 }

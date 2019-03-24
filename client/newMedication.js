@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
       newMedicationResults.innerHTML = "";
       newMedicationResults.classList.add("card");
 
+
       if(obj["count"] === 0){
         newMedicationResults.classList.add("no-danger");
         newMedicationResults.classList.remove("danger");
@@ -52,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
         newMedicationResults.innerHTML += "You are advised to speak to your physician before taking this drug"
       }
 
-
+      // newMedicationResults.style.maxHeight = "100%";
 
 
       addToMyMedicationBtn.classList.remove("hidden");
@@ -154,7 +155,7 @@ var medication = [{"atcCode": "M01AE01","name":"Ibufen", "strength":500,"strengt
 
 
 // var medicationInteractions = [{"atcCode":"M01AE01", "name":"Ibuprofen","major":[{"atcCode":"B01AC06", "name":"Aspirin"}],"moderate":[{"name":"Metoprolol","atcCode":"C07AB02"}],"minor":[]}]
-var medicationInteractions = [{"atcCode":"M01AE01", name:"Ibufen", "contraIndicationsICD":[{"icD10Code": "I10"},{ "icD10Code": "J45"},{"icD10Code":"N18"}], "major":[{"atcCode":"B01AC06"}],"moderate":[{"atcCode":"C07AB02"}],"minor":[]},
+var medicationInteractions = [{"atcCode":"M01AE01", name:"Ibufen", "contraIndicationsICD":[{"icD10Code": "I10"},{ "icD10Code": "J45"},{"icD10Code":"N18"}], "major":[{"atcCode":"B01AC06"}],"moderate":[{"atcCode":"C07AB02"},{"atcCode":"C09CA00"}],"minor":[]},
     {"atcCode":"", name:"Immodium", "contraIndicationsICD":[{"icD10Code": "", "icD10Code": ""}], "major":[{"atcCode":""}],"moderate":[{"atcCode":""}],"minor":[]},
     {"atcCode":"", name:"Paracetamol", "contraIndicationsICD":[], "major":[],"moderate":[],"minor":[]}
   ]
